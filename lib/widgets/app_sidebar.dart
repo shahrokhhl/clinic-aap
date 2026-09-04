@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../config/modules_config.dart';
+import '../models/module_models.dart';
 import '../theme/app_theme.dart';
-
 IconData _iconFor(String name) {
   const map = {
     'chart-pie': FontAwesomeIcons.chartPie,
