@@ -1,0 +1,73 @@
+name: clinic_accounting
+description: "نرم‌افزار حسابداری کلینیک — ساخته‌شده توسط نوراژ (nuraazh.ir)"
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+# -----------------------------------------------------------------------
+# نکته: این پروژه با flutter create از قبل ساخته نشده (چون این محیط به
+# pub.dev دسترسی ندارد)، پس دستورهای زیر را روی سیستم خودتان اجرا کنید:
+#
+#   flutter create --org ir.nuraazh --project-name clinic_accounting .
+#   (روی همین پوشه، تا فایل‌های android/ios/windows/macos/linux ساخته شوند)
+#   سپس همین pubspec.yaml و پوشه‌ی lib/ را جایگزین نسخه‌ی پیش‌فرض کنید.
+#   بعد:
+#   flutter pub get
+#   flutter run -d windows      # برای دسکتاپ ویندوز
+#   flutter run                 # برای موبایل (با شبیه‌ساز یا دستگاه وصل)
+# -----------------------------------------------------------------------
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # مدیریت وضعیت (state management) - ساده و سبک، مناسب تیم‌های کوچک
+  provider: ^6.1.2
+
+  # نمودارهای داشبورد مدیریتی (روند درآمد، مقایسه ماهانه و ...)
+  fl_chart: ^0.68.0
+
+  # اتصال به بک‌اند خودِ کلینیک (فاز ۲: FastAPI + WebSocket)
+  http: ^1.2.2
+  web_socket_channel: ^3.0.1
+
+  # ذخیره‌ی محلی تنظیمات (آدرس سرور کلینیک، توکن ورود، حالت تم و ...)
+  shared_preferences: ^2.3.2
+
+  # تاریخ شمسی (جلالی) - چون کل برنامه با تاریخ فارسی کار می‌کند
+  shamsi_date: ^1.1.1
+
+  # فرمت اعداد فارسی و جداکننده‌ی هزارگان
+  intl: ^0.19.0
+
+  # آیکون‌های مدرن‌تر و کامل‌تر از پیش‌فرض
+  font_awesome_flutter: ^10.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  # فونت فارسی وزیرمتن — باید فایل‌های .ttf را خودتان دانلود و در
+  # assets/fonts/ قرار دهید (از https://github.com/rastikerdar/vazirmatn)
+  # چون این محیط به گیت‌هاب برای دانلود باینری فونت دسترسی نداشت.
+  fonts:
+    - family: Vazirmatn
+      fonts:
+        - asset: assets/fonts/Vazirmatn-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Vazirmatn-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Vazirmatn-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Vazirmatn-Bold.ttf
+          weight: 700
+
+  assets:
+    - assets/images/
