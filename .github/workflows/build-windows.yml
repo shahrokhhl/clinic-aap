@@ -27,6 +27,9 @@ jobs:
       - name: Create Windows project
         run: flutter create --platforms=windows .
 
+      - name: Check Windows folder
+        run: dir windows
+
       - name: Get packages
         run: flutter pub get
 
